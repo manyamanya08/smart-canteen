@@ -1,0 +1,148 @@
+/* ==========================================================================
+   Smart Canteen Management System - Custom Styles & UI Enhancements
+   ========================================================================== */
+
+/* Dietary Indicator Badges (FSSAI standard) */
+.diet-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-width: 1.5px;
+  border-style: solid;
+  border-radius: 4px;
+  background-color: transparent;
+  flex-shrink: 0;
+}
+
+.diet-badge.veg {
+  border-color: #16a34a;
+}
+.diet-badge.veg::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #16a34a;
+}
+
+.diet-badge.non-veg {
+  border-color: #dc2626;
+}
+.diet-badge.non-veg::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 9px solid #dc2626;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* TV Token Board Animations */
+@keyframes pulse-ready {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 25px rgba(34, 197, 94, 0.4);
+  }
+  50% {
+    transform: scale(1.04);
+    box-shadow: 0 0 45px rgba(34, 197, 94, 0.85);
+  }
+}
+
+.token-ready-pulse {
+  animation: pulse-ready 1.8s infinite ease-in-out;
+}
+
+@keyframes flash-new {
+  0% { background-color: #fef08a; }
+  50% { background-color: #ffffff; }
+  100% { background-color: #fef08a; }
+}
+
+.ticket-flash {
+  animation: flash-new 1.2s ease-in-out 3;
+}
+
+/* Smooth modal transitions */
+.modal-backdrop {
+  backdrop-filter: blur(6px);
+  background-color: rgba(15, 23, 42, 0.65);
+}
+
+/* Kiosk mode cards */
+.kiosk-card {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.kiosk-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.12);
+}
+
+/* Print Styles for Kitchen Order Tickets & Customer Invoices */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #print-area, #print-area * {
+    visibility: visible;
+  }
+  #print-area {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 80mm;
+    font-family: monospace;
+    font-size: 12px;
+    color: #000;
+  }
+  .no-print {
+    display: none !important;
+  }
+}
+
+/* Toast container */
+#toast-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  pointer-events: none;
+}
+
+.toast {
+  pointer-events: auto;
+  animation: toast-in 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.2s ease;
+}
+
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
