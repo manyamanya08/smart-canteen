@@ -1,4 +1,28 @@
-# ⚡ SmartBite Canteen OS - Smart Canteen Management System
+🚀 Project Development
+
+SmartBite Canteen OS is designed to simplify the campus food ordering experience through a digital platform.
+
+🎯 Project Goals
+
+- Reduce waiting time at canteens.
+- Make food ordering easier for students and employees.
+- Provide real-time order tracking.
+- Improve the overall canteen management process.
+
+💻 Technologies Used
+
+- HTML
+- CSS
+- JavaScript
+- Python
+- Node.js
+
+🌱 Future Improvements
+
+- Enhanced user experience.
+- Additional payment integrations.
+- Improved order management.
+- More interactive features.# ⚡ SmartBite Canteen OS - Smart Canteen Management System
 
 A full-stack, real-time, interactive **Smart Canteen Management System** designed to eliminate long cafeteria queues, automate order flow, and provide real-time status tracking across self-service kiosks, the kitchen, and public waiting displays.
 
